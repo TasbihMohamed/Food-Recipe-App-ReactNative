@@ -132,18 +132,44 @@ const Home = ({ navigation }) => {
           data={dummyData.trendingRecipes}
           keyExtractor={(item) => `${item.id}`}
           showsHorizontalScrollIndicator={false}
-          // ListHeaderComponent={
-          //   <View>
-          //   </View>
-          // }
-          renderItem={({ item }) => {
-            return (<TrendingCard recipeItem={item}/>
+
+          renderItem={({ item ,index}) => {
+            return (
+              <TrendingCard recipeItem={item}
+             containerStyle={{marginLeft:index==0? SIZES.padding: 0}}
+                 onPress={() => navigation.navigate('Recipe', { recipe: item })} />
             );
           }}
         />
       </View>
     );
   }
+  function renderCategoryHeader() {
+    return( <View
+        style={{flexDirection:'row',alignItems:'center',
+          marginHorizontal: SIZES.padding,marginTop:20,
+        }}>
+        <Text
+              style={{   flex:1,
+                ...FONTS.h2,
+              }}>
+            Categories
+            </Text>
+        <TouchableOpacity>
+        <Text
+              style={{
+                color: COLORS.gray,    
+                ...FONTS.body4,
+              }}>
+             View All
+            </Text>
+             </TouchableOpacity>
+         </View>
+        )
+  }
+
+
+
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.white }}>
       <FlatList
@@ -161,6 +187,7 @@ const Home = ({ navigation }) => {
             {/* treding services */}
             {renderTrendingServices()}
             {/* category header */}
+            {renderCategoryHeader()}
           </View>
         }
         renderItem={({ item }) => {

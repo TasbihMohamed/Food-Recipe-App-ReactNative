@@ -42,16 +42,13 @@ const Login = ({ navigation }) => {
               flex: 1, justifyContent: 'center',
             }}>
     
-              <CustomButton buttonText="LogIn"
+              <CustomButton buttonText="Let's Start"
                // onPress={()=>navigation.navigate("Home")}
                 onPress={()=>navigation.replace("Home")} // replace doesn't allow you to come back to the first screen (log in )
                 colors={[COLORS.darkGreen, COLORS.lime]}
                 buttonContainerStyle={{ borderRadius: 20, paddingVertical: 18 }} />
     
-              <CustomButton buttonText="Sign Up" colors={[]}
-                buttonContainerStyle={{ borderRadius: 20, paddingVertical: 18, borderWidth: 1, borderColor: COLORS.darkLime, marginTop: SIZES.radius }}
-              onPress={()=>navigation.replace("Home")}
-             />
+          
     
             </View>
           </View>
