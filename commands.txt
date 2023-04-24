@@ -1,0 +1,13 @@
+>> for the food recipe app
+expo install expo-linear-gradient // if i use expo 
+npm install react-native-linear-gradient --save  // if i am not use expo 
+
+
+///
+
+npm install @react-navigation/stack
+npm install @react-navigation/native
+npm install @react-navigation/bottom-tabs
+////
+//for trnding recipes cards 
+npm install --save @react-native-community/blur 
